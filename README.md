@@ -1,1 +1,127 @@
-# rsocial
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RSOCIAL Neon</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+
+body {
+margin:0;
+padding:0;
+font-family: 'Arial', sans-serif;
+text-align:center;
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+background: linear-gradient(270deg, #ff00cc, #3333ff, #00ffcc, #ffcc00);
+background-size: 800% 800%;
+animation: gradientBG 20s ease infinite;
+color:#fff;
+overflow-x:hidden;
+}
+
+@keyframes gradientBG {
+0% {background-position:0% 50%;}
+50% {background-position:100% 50%;}
+100% {background-position:0% 50%;}
+}
+
+header {
+font-family: 'Orbitron', sans-serif;
+font-size:3em;
+font-weight:bold;
+text-shadow: 0 0 10px #ff00cc, 0 0 20px #ff00cc, 0 0 30px #ff00cc;
+animation: glowLogo 2s ease-in-out infinite alternate;
+margin-bottom:2rem;
+}
+
+@keyframes glowLogo {
+0% {text-shadow: 0 0 5px #ff00cc, 0 0 10px #ff00cc, 0 0 15px #ff00cc;}
+100% {text-shadow: 0 0 20px #ff00cc, 0 0 30px #ff00cc, 0 0 40px #ff00cc;}
+}
+
+.container {
+max-width:400px;
+margin:0 auto;
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+input {
+padding:12px;
+border-radius:8px;
+border:none;
+outline:none;
+font-size:1em;
+text-align:center;
+}
+
+button {
+padding:12px;
+border:none;
+border-radius:8px;
+font-size:1em;
+font-weight:bold;
+cursor:pointer;
+color:#fff;
+background:#ff00cc;
+box-shadow: 0 0 10px #ff00cc, 0 0 20px #ff00cc, 0 0 30px #ff00cc;
+transition:0.3s;
+}
+
+button:hover {
+box-shadow: 0 0 20px #ff00cc, 0 0 40px #ff00cc, 0 0 60px #ff00cc;
+transform:scale(1.05);
+}
+
+.btn {
+display:block;
+padding:15px;
+border:none;
+border-radius:10px;
+font-weight:bold;
+font-size:1.2em;
+color:#fff;
+text-decoration:none;
+transition:0.3s;
+text-shadow: 0 0 5px #fff;
+box-shadow: 0 0 5px #fff;
+}
+
+.tiktok { background:#000; box-shadow:0 0 10px #fff; }
+.instagram { background:linear-gradient(45deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5); box-shadow:0 0 10px #fff;}
+.youtube { background:#ff0000; box-shadow:0 0 10px #fff;}
+.facebook { background:#1877f2; box-shadow:0 0 10px #fff;}
+
+.btn:hover {
+filter: brightness(1.3);
+transform: scale(1.1);
+box-shadow:0 0 20px #fff, 0 0 30px #fff;
+}
+
+</style>
+</head>
+<body>
+
+<header>RSOCIAL</header>
+
+<div class="container" id="formulario">
+window.addEventListener("DOMContentLoaded", ()=>{
+const params = new URLSearchParams(window.location.search);
+if(params.toString()){
+document.getElementById("formulario").style.display="none";
+document.getElementById("botones").style.display="block";
+if(params.has("tiktok")) document.getElementById("btnTikTok").href=params.get("tiktok"); else document.getElementById("btnTikTok").style.display="none";
+if(params.has("instagram")) document.getElementById("btnInstagram").href=params.get("instagram"); else document.getElementById("btnInstagram").style.display="none";
+if(params.has("youtube")) document.getElementById("btnYouTube").href=params.get("youtube"); else document.getElementById("btnYouTube").style.display="none";
+if(params.has("facebook")) document.getElementById("btnFacebook").href=params.get("facebook"); else document.getElementById("btnFacebook").style.display="none";
+}
+});
+</script>
+
+</body>
+</html>
